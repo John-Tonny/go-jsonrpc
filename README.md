@@ -1,10 +1,14 @@
+# JSON-RPC 2.0 Client for golang
+
 [![Go Report Card](https://goreportcard.com/badge/github.com/ybbus/jsonrpc)](https://goreportcard.com/report/github.com/ybbus/jsonrpc)
 [![GoDoc](https://godoc.org/github.com/ybbus/jsonrpc?status.svg)](https://godoc.org/github.com/ybbus/jsonrpc)
 [![GitHub license](https://img.shields.io/github/license/mashape/apistatus.svg)]()
 
-# JSON-RPC 2.0 Client for golang
 A go implementation of an rpc client using json as data format over http.
 The implementation is based on the JSON-RPC 2.0 specification: http://www.jsonrpc.org/specification
+
+![image.png](https://qiita-image-store.s3.amazonaws.com/0/153320/92bfd193-7cc8-3ed5-ce3c-ca710e8b0aa3.png)
+
 
 Supports:
 - requests with arbitrary parameters
