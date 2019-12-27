@@ -6,10 +6,10 @@ import (
 	"encoding/base64"
 	"encoding/json"
 	"errors"
-	"fmt"
 	"net/http"
 	"strconv"
 	"sync"
+	"time"
 )
 
 // RPCRequest represents a jsonrpc request object.
@@ -77,9 +77,13 @@ type RPCClient struct {
 // NewRPCClient returns a new RPCClient instance with default configuration (no custom headers, default http.Client, autoincrement ids).
 // Endpoint is the rpc-service url to which the rpc requests are sent.
 func NewRPCClient(endpoint string) *RPCClient {
+	client := &http.Client{
+		Timeout: 5 * time.Second,
+	}
 	return &RPCClient{
-		endpoint:        endpoint,
-		httpClient:      http.DefaultClient,
+		endpoint:   endpoint,
+		httpClient: client,
+		//httpClient:      http.DefaultClient,
 		autoIncrementID: true,
 		nextID:          0,
 		customHeaders:   make(map[string]string),
